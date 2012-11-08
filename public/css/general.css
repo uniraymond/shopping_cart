@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+ul{
+	clear:both;
+	float:left;
+}
+ul li{
+	float:left;
+	padding: 10px;
+	width: 180px;
+}
+
+ul li.narrow{
+	width: 50px;
+}

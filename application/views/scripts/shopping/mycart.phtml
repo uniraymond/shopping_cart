@@ -1,0 +1,40 @@
+<script type="text/javascript" src="/js/jquery-1.8.2.min.js" ></script>
+<style>
+<!--
+@IMPORT url("/css/general.css");
+-->
+</style>
+<h1>My Cart</h1>
+<div>
+<form action="/shopping/updatecart" method="post">
+	<ul>
+		<li class="narrow">ID</li>
+		<li>Name</li>
+		<li class="narrow">Price</li>
+		<li>Publisher</li>
+		<li>Amount</li>
+		<li>Delete/Keep</li>
+	</ul>
+	<?php foreach($this->books as $book) {?>
+	<ul>
+		<li class="narrow"><?=$book['id']?></li>
+		<li><?=$book['name']?></li>
+		<li class="narrow"><?=$book['price']?></li>
+		<li><?=$book['publishHouse']?></li>
+		<input type="hidden" name='bookids[]' value='<?=$book['id']?>' />
+		<li><input type="text" name='booknums[]' value='<?=$book['nums']?>' /></li>
+		<li><a href="/shopping/delproduct?id=<?=$book['id']?>">Delete?</a></li>
+	</ul>
+	<?php } ?>
+	<url>
+		<li><input type="submit" value="Renew Number" /></li>
+		<li></li>
+	</url>
+</form>
+</div>
+<div>
+Total Price: <?=$this->total_price?>
+</div>
+<div>
+<a href='/hall/gohallui'>Return Hall</a>
+</div>
